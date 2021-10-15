@@ -27,14 +27,7 @@ class _TweenAnimationExampleState extends State<TweenAnimationExample> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TweenAnimationBuilder<double>(
-              tween: Tween(begin: 0, end: _angle),
-              duration: Duration(seconds: 1),
-              child: CustomText('🍑', size: 120),
-              builder: (context, value, child) {
-                return Transform.rotate(angle: value,
-                child: child,);
-              }),
+            CustomText('🍑', size: 120),
               SizedBox(height: 20,),
               Slider.adaptive(value: _angle, 
               max: 180,

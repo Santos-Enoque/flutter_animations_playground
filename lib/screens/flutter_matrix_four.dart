@@ -27,7 +27,7 @@ class _FlutterMatrixFourExampleState extends State<FlutterMatrixFourExample> {
           transform: Matrix4(
               1,0,0,0,
               0,1,0,0,
-              0,0,1,0.002,
+              0,0,1,0,
               0,0,0,1,
           )..rotateX(x)..rotateY(y)..rotateZ(z),
           alignment: FractionalOffset.center,
