@@ -6,6 +6,7 @@ import 'package:flutter_animations_themes_custom_painter/screens/implicit_animat
 import 'package:flutter_animations_themes_custom_painter/screens/tween_animation.dart';
 import 'package:flutter_animations_themes_custom_painter/widgets/custom_text.dart';
 
+import 'explicit_animations.dart';
 import 'flutter_curves.dart';
 import 'flutter_matrix_four.dart';
 
@@ -67,6 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
             title: CustomText('Flutter Tween Animations', size: 18,),
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (_) => TweenAnimationExample()));
+            },
+          ),
+                   Divider(),
+             ListTile(
+            leading: CustomText('👉', size: 30,),
+            title: CustomText('Explicit Animations', size: 18,),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_) => BouncingBallDemo()));
             },
           ),
 

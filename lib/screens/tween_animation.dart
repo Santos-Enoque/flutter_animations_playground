@@ -11,7 +11,7 @@ class TweenAnimationExample extends StatefulWidget {
 }
 
 class _TweenAnimationExampleState extends State<TweenAnimationExample> {
-  var _angle = 0.0;
+  var _scale = 1.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +27,20 @@ class _TweenAnimationExampleState extends State<TweenAnimationExample> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomText('🍑', size: 120),
+            TweenAnimationBuilder<double>(
+              builder: (context, value, child){
+                return Transform.scale(scale: value, child: child,);
+              },
+              tween: Tween(begin: 1, end: _scale),
+              duration: Duration(milliseconds: 600),
+              child: CustomText('🍑', size: 80)),
               SizedBox(height: 20,),
-              Slider.adaptive(value: _angle, 
-              max: 180,
-              min: 0,
+              Slider.adaptive(value: _scale, 
+              max: 5,
+              min: 1,
               onChanged: (value){
                 setState(() {
-                _angle = value;
+                _scale = value;
                   
                 });
               })
